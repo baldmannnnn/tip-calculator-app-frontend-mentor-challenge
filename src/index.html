@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calc</title>
+  </head>
+  <body>
+    <main>
+      <div class="card" id="calc">
+        <div>
+          <p>bill</p>
+          <input type="text" id="bill-input" placeholder="0" />
+        </div>
+
+        <div>
+          <p>select tip %</p>
+          <div>
+            <button class="btn" data-id="tip-0">5%</button>
+            <button class="btn" data-id="tip-1">10%</button>
+            <button class="btn" data-id="tip-2">15%</button>
+            <button class="btn" data-id="tip-3">25%</button>
+            <button class="btn" data-id="tip-4">50%</button>
+            <input type="text" placeholder="custom" id="custom-input" />
+          </div>
+        </div>
+
+        <div>
+          <p>number of people</p>
+          <input type="text" placeholder="0" id="people-input" min="0" />
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <p>tip amount / person</p>
+          <p id="tip-amount">$0.00</p>
+        </div>
+
+        <div>
+          <p>total / person</p>
+          <p id="total">$0.00</p>
+        </div>
+
+        <button id="btn-reset">Reset</button>
+      </div>
+    </main>
+
+    <script src="./dist/index.js"></script>
+  </body>
+</html>
