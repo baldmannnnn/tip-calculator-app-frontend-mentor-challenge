@@ -36,10 +36,33 @@ peopleInput.addEventListener('input', function (e) {
 customInput.addEventListener('input', function (e) {
   const target = e.target as HTMLInputElement
 
-  if (!isNaN(Number(target.value))) {
-    selectedTip = parseFloat(target.value) / 100
+  if (isNaN(Number(target.value)) || Number(target.value) === 0) {
+    selectedTip = 0
   } else {
-    console.error('error')
+    selectedTip = parseFloat(target.value) / 100
+  }
+})
+
+customInput.addEventListener('focus', function (e) {
+  const target = e.target as HTMLInputElement
+  for (let button of btnControls) {
+    const btnEl = button as HTMLButtonElement
+    btnEl.classList.remove('active')
+  }
+
+  selectedTip = parseFloat(target.value) / 100
+
+  if (isNaN(selectedTip)) {
+    selectedTip = 0
+  }
+
+  if (bill > 0 && selectedTip > 0 && numOfPeople > 0) {
+    tipAmount = (bill / numOfPeople) * selectedTip
+    total = Number((bill / numOfPeople + tipAmount).toFixed(2))
+
+    renderDOMValues(tipAmount, total)
+  } else {
+    renderDOMValues(0, 0)
   }
 })
 
@@ -48,14 +71,22 @@ btnControls.forEach(function (btn) {
     const target = e.target as HTMLButtonElement
     selectedTip = parseFloat(target.outerText) / 100
 
-    if (bill !== 0 && selectedTip !== 0 && numOfPeople !== 0) {
+    if (bill > 0 && selectedTip > 0 && numOfPeople > 0) {
       tipAmount = (bill * selectedTip) / numOfPeople
       total = Number((bill / numOfPeople + tipAmount).toFixed(2))
+      renderDOMValues(tipAmount, total)
+    } else {
+      renderDOMValues(0, 0)
+    }
 
-      const { newTip, newTotal } = renderDOMValues(tipAmount, total)
+    for (let button of btnControls) {
+      const btnEl = button as HTMLButtonElement
 
-      tipAmountEl.textContent = newTip
-      totalPerPersonEl.textContent = newTotal
+      btnEl.classList.remove('active')
+
+      if (btnEl.dataset.id === target.dataset.id) {
+        target.classList.add('active')
+      }
     }
   })
 })
@@ -67,34 +98,44 @@ calcEl.addEventListener('input', function (e) {
     tipAmount = (bill / numOfPeople) * selectedTip
     total = Number((bill / numOfPeople + tipAmount).toFixed(2))
 
-    const { newTip, newTotal } = renderDOMValues(tipAmount, total)
-
-    tipAmountEl.textContent = newTip
-    totalPerPersonEl.textContent = newTotal
+    renderDOMValues(tipAmount, total)
+  } else {
+    renderDOMValues(0, 0)
   }
 })
 
-function renderDOMValues(
-  tip: number,
-  total: number
-): { newTip: string; newTotal: string } {
-  let newTip: string
-  let newTotal: string
+interface DOMValues {
+  newTip: string
+  newTotal: string
+}
+
+function renderDOMValues(tip: number, total: number) {
+  const values: DOMValues = { newTip: '', newTotal: '' }
 
   const decimalPoint = tip.toString().indexOf('.')
 
-  if (isNaN(numOfPeople) || isNaN(bill) || isNaN(selectedTip))
-    return { newTip: '$0.00', newTotal: '$0.00' }
+  if (
+    isNaN(numOfPeople) ||
+    isNaN(bill) ||
+    isNaN(selectedTip) ||
+    selectedTip <= 0 ||
+    numOfPeople <= 0 ||
+    bill <= 0
+  ) {
+    values.newTip = '0.00'
+    values.newTotal = '0.00'
+  } else {
+    values.newTip = tip
+      .toString()
+      .split('')
+      .splice(0, decimalPoint + 3)
+      .join('')
 
-  newTip = tip
-    .toString()
-    .split('')
-    .splice(0, decimalPoint + 3)
-    .join('')
+    values.newTotal = total.toString()
+  }
 
-  newTotal = total.toString()
-
-  return { newTip, newTotal }
+  tipAmountEl.textContent = `$${values.newTip}`
+  totalPerPersonEl.textContent = `$${values.newTotal}`
 }
 
 function resetRenderDOM() {
@@ -110,6 +151,7 @@ function clearAllValues() {
   total = 0
   billInput.value = ''
   peopleInput.value = ''
+  customInput.value = ''
 }
 
 window.addEventListener('load', clearAllValues)

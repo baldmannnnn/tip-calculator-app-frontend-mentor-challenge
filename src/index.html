@@ -4,49 +4,107 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tip Calc</title>
+    <script src="./scripts/app.ts" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/main.scss" />
+
+    <title>Frontend Mentor Challenge | Tip Calculator App</title>
   </head>
   <body>
+    <header>
+      <img src="./images/logo.svg" alt="logo" />
+    </header>
     <main>
       <div class="card" id="calc">
-        <div>
-          <p>bill</p>
-          <input type="text" id="bill-input" placeholder="0" />
+        <div class="wrapper mb-lg">
+          <label class="text-sm" for="bill-input">Bill</label>
+          <div class="input-wrapper">
+            <img
+              src="./images/icon-dollar.svg"
+              alt="dollar icon"
+              class="icon"
+            />
+            <input
+              type="text"
+              id="bill-input"
+              placeholder="0"
+              class="text-md text-right w-100 pr-sm mt-xs"
+            />
+          </div>
         </div>
 
-        <div>
-          <p>select tip %</p>
-          <div>
-            <button class="btn" data-id="tip-0">5%</button>
-            <button class="btn" data-id="tip-1">10%</button>
-            <button class="btn" data-id="tip-2">15%</button>
-            <button class="btn" data-id="tip-3">25%</button>
-            <button class="btn" data-id="tip-4">50%</button>
-            <input type="text" placeholder="custom" id="custom-input" />
+        <div class="wrapper mb-lg">
+          <div class="d-grid">
+            <p class="text-sm">Select Tip %</p>
+            <button class="btn bg-dark text-md py-xs" data-id="tip-0">
+              5%
+            </button>
+            <button class="btn bg-dark text-md py-xs" data-id="tip-1">
+              10%
+            </button>
+            <button class="btn bg-dark text-md py-xs" data-id="tip-2">
+              15%
+            </button>
+            <button class="btn bg-dark text-md py-xs" data-id="tip-3">
+              25%
+            </button>
+            <button class="btn bg-dark text-md py-xs" data-id="tip-4">
+              50%
+            </button>
+            <input
+              type="text"
+              placeholder="Custom"
+              id="custom-input"
+              min="1"
+              class="text-md text-right w-100 pr-sm"
+            />
+          </div>
+        </div>
+
+        <div class="wrapper">
+          <label class="text-sm" for="people-input">Number of People</label>
+          <div class="input-wrapper">
+            <img src="./images/icon-person.svg" alt="icon" class="icon" />
+            <input
+              type="text"
+              placeholder="0"
+              id="people-input"
+              min="1"
+              class="text-md text-right w-100 pr-sm mt-xs"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-dark p-md bordered w-100 card-results">
+        <div id="results">
+          <div class="results-wrapper">
+            <div class="wrapper d-flex mb-md">
+              <p class="text-sm text-white">
+                Tip Amount
+                <span class="text-xs text-grey d-block">/ person</span>
+              </p>
+              <p id="tip-amount" class="text-lg text-primary">$0.00</p>
+            </div>
+
+            <div class="wrapper d-flex">
+              <p class="text-sm text-white">
+                Total <span class="text-xs text-grey d-block">/ person</span>
+              </p>
+              <p id="total" class="text-lg text-primary">$0.00</p>
+            </div>
           </div>
         </div>
 
         <div>
-          <p>number of people</p>
-          <input type="text" placeholder="0" id="people-input" min="0" />
+          <button class="btn btn--accent" id="btn-reset">reset</button>
         </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <p>tip amount / person</p>
-          <p id="tip-amount">$0.00</p>
-        </div>
-
-        <div>
-          <p>total / person</p>
-          <p id="total">$0.00</p>
-        </div>
-
-        <button id="btn-reset">Reset</button>
       </div>
     </main>
-
-    <script src="./dist/index.js"></script>
   </body>
 </html>

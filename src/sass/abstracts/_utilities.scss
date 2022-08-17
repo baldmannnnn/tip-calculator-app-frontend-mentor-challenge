@@ -1,0 +1,109 @@
+@use './variables' as *;
+
+.bg-dark {
+  background-color: $clr-primary-700;
+}
+
+.active {
+  background-color: $clr-primary-500;
+  color: $clr-primary-700 !important;
+}
+
+.text-xs {
+  font-size: $size-xs;
+}
+.text-sm {
+  font-size: $size-sm;
+}
+
+.text-md {
+  font-size: $size-md;
+}
+
+.text-lg {
+  font-size: $size-lg;
+}
+
+.mt-xs {
+  margin-top: 6px;
+}
+.mt-lg {
+  margin-top: $size-lg;
+}
+
+.mb-md {
+  margin-bottom: 20px;
+}
+.mb-lg {
+  margin-bottom: $size-lg;
+}
+
+.p-md {
+  padding: 24px;
+}
+
+.p-sm {
+  padding: 16px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $size-sm;
+
+  & p {
+    grid-column: 1/-1;
+  }
+
+  @media screen and (min-width: 440px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.py-xs {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.pr-sm {
+  padding-right: $size-sm;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bordered {
+  border-radius: 15px;
+}
+
+.d-block {
+  display: block;
+}
+
+.text-white {
+  color: $clr-neutral-100;
+}
+
+.text-grey {
+  color: $clr-neutral-500;
+}
+
+.text-primary {
+  color: $clr-primary-500;
+}
+
+.icons {
+  position: absolute;
+}

@@ -1,0 +1,112 @@
+@use '../abstracts/' as *;
+
+body {
+  background-color: $clr-primary-300;
+  font-family: 'Space Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 40px;
+  align-items: center;
+  min-height: 100vh;
+
+  @media screen and (min-width: 900px) {
+    justify-content: space-evenly;
+    gap: 0;
+  }
+}
+
+p,
+label {
+  color: $clr-neutral-700;
+}
+
+input {
+  background-color: $clr-neutral-200;
+  border: 0;
+  color: $clr-primary-700;
+  caret-color: $clr-primary-500;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  &:hover,
+  &:focus {
+    outline: 2px solid $clr-primary-500;
+    border-radius: 5px;
+  }
+}
+
+header {
+  padding-top: 50px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: $clr-neutral-100;
+  box-shadow: 0px 32px 43px 0px hsla(185, 38%, 50%, 0.2);
+  border-radius: 25px;
+  width: min(100%, 600px);
+
+  padding: $size-lg;
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+    width: min(90%, 920px);
+    gap: $size-lg;
+  }
+}
+
+#calc {
+  margin: 0;
+
+  @media only screen and (min-width: 900px) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+    max-width: 380px;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 22px;
+  left: 12px;
+  right: 0;
+  bottom: 0;
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: $size-lg;
+
+  @media screen and (min-width: 900px) {
+    margin-bottom: 0;
+    width: 100%;
+    height: calc(100% - $size-xl);
+  }
+}
+
+.card-results {
+  padding: 24px;
+
+  @media screen and (min-width: 900px) {
+    padding: 40px;
+  }
+}
+
+#tip-amount,
+#total {
+  line-height: 1.5;
+
+  @media screen and (min-width: 900px) {
+    line-height: 2.2;
+  }
+}
