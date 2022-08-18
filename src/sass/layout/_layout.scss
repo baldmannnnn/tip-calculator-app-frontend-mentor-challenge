@@ -10,9 +10,9 @@ body {
   align-items: center;
   min-height: 100vh;
 
-  @media screen and (min-width: 900px) {
-    justify-content: space-evenly;
-    gap: 0;
+  @media screen and (min-width: 980px) {
+    justify-content: center;
+    gap: 88px;
   }
 }
 
@@ -45,7 +45,7 @@ input {
 header {
   padding-top: 50px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 980px) {
     padding-top: 20px;
   }
 }
@@ -60,7 +60,7 @@ main {
 
   padding: $size-lg;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 980px) {
     flex-direction: row;
     width: min(90%, 920px);
     gap: $size-lg;
@@ -71,7 +71,7 @@ main {
   margin: 0;
   margin-bottom: 32px;
 
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 980px) {
     margin-top: 24px;
     margin-bottom: 24px;
     margin-left: 16px;
@@ -98,7 +98,7 @@ main {
   justify-content: space-between;
   margin-bottom: $size-lg;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 980px) {
     margin-bottom: 0;
     width: 100%;
     height: calc(100% - $size-xl);
@@ -108,7 +108,7 @@ main {
 .card-results {
   padding: 24px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 980px) {
     padding: 40px;
   }
 }
@@ -118,7 +118,7 @@ main {
   line-height: 1.5;
   font-size: 32px;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 980px) {
     line-height: 2.2;
     font-size: 48px;
   }

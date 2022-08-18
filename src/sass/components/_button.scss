@@ -8,15 +8,25 @@
   line-height: 35.54px;
   text-align: center;
   cursor: pointer;
+
+  &:hover {
+    background-color: $clr-primary-400;
+    color: $clr-primary-700;
+  }
 }
 
 .btn--accent {
+  border: 0;
+  border-radius: 5px;
+  font-size: 24px;
   text-transform: uppercase;
   width: 100%;
+  line-height: 35.54px;
   padding-top: 9px;
   padding-bottom: 9px;
   background-color: $clr-primary-600;
   color: $clr-primary-700;
   line-height: 30px;
   cursor: unset;
+  opacity: 0.35;
 }
