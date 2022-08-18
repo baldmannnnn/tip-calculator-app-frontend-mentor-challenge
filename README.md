@@ -26,12 +26,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot-mobile.png ./screenshot-tablet.png ./screenshot-desktop.png ./screenshot-display-error.png)
+![Mobile view](./screenshot-mobile.png)
+![Tablet view](./screenshot-tablet.png)
+![Desktop view](./screenshot-desktop.png)
+![Display errors](./screenshot-display-error.png)
 
 ### Links
 
-- Solution URL: https://github.com/baldmannnnn/tip-calculator-app-frontend-mentor-challenge
-- Live Site URL: https://tip-calculator-app-frontend-mentor-challenge.vercel.app/
+- Solution URL:[Github repo](https://github.com/baldmannnnn/tip-calculator-app-frontend-mentor-challenge)
+- Live Site URL:[Live site](https://tip-calculator-app-frontend-mentor-challenge.vercel.app/)
 
 ## My process
 
@@ -43,5 +46,5 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - https://www.frontendmentor.io/profile/baldmannnnn
-- Twitter - https://twitter.com/baldoooooman
+- Frontend Mentor - [@baldmannnnn](https://www.frontendmentor.io/profile/baldmannnnn)
+- Twitter - [@baldoooooman](https://twitter.com/baldoooooman)
