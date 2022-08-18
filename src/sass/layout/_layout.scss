@@ -46,7 +46,7 @@ header {
   padding-top: 50px;
 
   @media screen and (min-width: 900px) {
-    padding-top: 0;
+    padding-top: 20px;
   }
 }
 
@@ -116,9 +116,11 @@ main {
 #tip-amount,
 #total {
   line-height: 1.5;
+  font-size: 32px;
 
   @media screen and (min-width: 900px) {
     line-height: 2.2;
+    font-size: 48px;
   }
 }
 
