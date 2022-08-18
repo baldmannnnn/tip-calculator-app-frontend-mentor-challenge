@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:[Github repo](https://github.com/baldmannnnn/tip-calculator-app-frontend-mentor-challenge)
-- Live Site URL:[Live site](https://tip-calculator-app-frontend-mentor-challenge.vercel.app/)
+- Solution URL: [Github repo](https://github.com/baldmannnnn/tip-calculator-app-frontend-mentor-challenge)
+- Live Site URL: [Live site](https://tip-calculator-app-frontend-mentor-challenge.vercel.app/)
 
 ## My process
 
