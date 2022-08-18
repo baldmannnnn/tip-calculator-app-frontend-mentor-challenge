@@ -5,8 +5,9 @@
 }
 
 .active {
-  background-color: $clr-primary-500;
+  background-color: $clr-primary-500 !important;
   color: $clr-primary-700 !important;
+  cursor: pointer !important;
 }
 
 .text-xs {
@@ -54,6 +55,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $size-sm;
+  position: relative;
 
   & p {
     grid-column: 1/-1;

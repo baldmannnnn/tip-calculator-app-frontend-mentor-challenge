@@ -28,16 +28,26 @@ input {
   caret-color: $clr-primary-500;
   padding-top: 6px;
   padding-bottom: 6px;
+  cursor: pointer;
 
   &:hover,
   &:focus {
     outline: 2px solid $clr-primary-500;
     border-radius: 5px;
   }
+
+  &.invalid {
+    outline: 2px solid #e17457;
+    border-radius: 5px;
+  }
 }
 
 header {
   padding-top: 50px;
+
+  @media screen and (min-width: 900px) {
+    padding-top: 0;
+  }
 }
 
 main {
@@ -59,6 +69,7 @@ main {
 
 #calc {
   margin: 0;
+  margin-bottom: 32px;
 
   @media only screen and (min-width: 900px) {
     margin-top: 24px;
@@ -109,4 +120,31 @@ main {
   @media screen and (min-width: 900px) {
     line-height: 2.2;
   }
+}
+
+.error {
+  color: #e17457;
+  z-index: 5;
+  position: absolute;
+  top: -24px;
+  right: 0;
+}
+
+.custom-error {
+  color: #e17457;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.attribution {
+  text-align: center;
+  color: $clr-primary-700;
+  font-size: $size-xs;
+  padding-bottom: $size-sm;
+}
+
+a {
+  color: $clr-neutral-700;
 }
