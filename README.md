@@ -26,10 +26,10 @@ Users should be able to:
 
 ### Screenshot
 
-![Mobile view](./screenshot-mobile.png)
-![Tablet view](./screenshot-tablet.png)
-![Desktop view](./screenshot-desktop.png)
-![Display errors](./screenshot-display-error.png)
+![Mobile view](./screenshots/mobile.png)
+![Tablet view](./screenshots/tablet.png)
+![Desktop view](./screenshots/desktop.png)
+![Display errors](./screenshots/display-error.png)
 
 ### Links
 

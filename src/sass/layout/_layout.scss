@@ -92,6 +92,14 @@ main {
   bottom: 0;
 }
 
+.results-wrapper div:first-of-type {
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 980px) {
+    margin-bottom: 25px;
+  }
+}
+
 #results {
   display: flex;
   flex-direction: column;
@@ -106,8 +114,11 @@ main {
 }
 
 .card-results {
-  padding: 24px;
+  padding: 30px 24px 24px 24px;
 
+  @media screen and (min-width: 500px) {
+    padding: 40px;
+  }
   @media screen and (min-width: 980px) {
     padding: 40px;
   }
@@ -117,10 +128,18 @@ main {
 #total {
   line-height: 1.5;
   font-size: 32px;
+  margin-bottom: 5px;
+
+  @media screen and (min-width: 500px) {
+    line-height: 1.5;
+    font-size: 48px;
+    margin-bottom: 5px;
+  }
 
   @media screen and (min-width: 980px) {
-    line-height: 2.2;
+    line-height: 1.5;
     font-size: 48px;
+    margin-bottom: 0;
   }
 }
 
